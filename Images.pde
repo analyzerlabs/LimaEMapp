@@ -1,4 +1,4 @@
 PImage icon;
 void loadImages(){
-    icon = loadImage("analyzer-icon2.png");
+    icon = loadImage("/data/analyzer-icon2.png");
 }
