@@ -52,11 +52,12 @@ int init,i=0;
 void draw() {
     if(millis()-init>=1){
        menu();
-       home(w/6,5*h/6,6);
+       home(w/6,5*h/6,8);
        println(init);
        init = millis();
        knobe(i,100);       
        if(i!=72)i++;
+       button(w/3,w/3,w/10,blue);
    }
 }
 

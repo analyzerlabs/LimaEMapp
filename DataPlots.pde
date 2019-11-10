@@ -1,9 +1,12 @@
 void knobe(int value,int max){
-     stroke(letraSecundaria);
-     fill(letraSecundaria);
-     
      int R = w/3;
      int r = w/20;
+     stroke(fondoPrincipal);
+     fill(fondoPrincipal);
+     arc(w/2, h/2, 2*R+r+2, 2*R+r+2, 0, 2*PI, PIE);
+     stroke(letraSecundaria);
+     fill(letraSecundaria);
+
      arc(w/2, h/2, 2*R+5, 2*R+r/3, 0, 2*PI, PIE);
      fill(fondoPrincipal);
      stroke(fondoPrincipal);
