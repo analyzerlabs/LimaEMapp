@@ -38,7 +38,7 @@ void setup() {
  h=displayHeight;
  frameRate(60);
  orientation(PORTRAIT);
- background(fondo2);
+ background(fondoPrincipal);
   //start listening for BT connections
  bt.start();
  //at app start select device…
@@ -47,12 +47,17 @@ void setup() {
  smallLetters = (h+w)/60;
 }
 
-
+int init,i=0;
 // Wie loop() beim Arduino wird draw() immer wieder aufgerufen, solange das Programm ausgeführt wird.
 void draw() {
-    menu();
-    knobe(50,100);
-    home(w/6,5*h/6,6);
+    if(millis()-init>=1){
+       menu();
+       home(w/6,5*h/6,6);
+       println(init);
+       init = millis();
+       knobe(i,100);       
+       if(i!=72)i++;
+   }
 }
 
 void onKetaiListSelection(KetaiList klist)
