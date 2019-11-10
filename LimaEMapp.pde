@@ -1,6 +1,6 @@
 import android.content.Intent;
 import android.os.Bundle;
-
+import android.util.DisplayMetrics;
 import ketai.net.bluetooth.*;
 import ketai.ui.*;
 import ketai.net.*;
@@ -52,7 +52,9 @@ void setup() {
 int init,i=0;
 // Wie loop() beim Arduino wird draw() immer wieder aufgerufen, solange das Programm ausgeführt wird.
 void draw() {
-    loadImages();
+   
+  
+  loadImages();
     if(millis()-init>=1){
        menu();
        home(w/6,5*h/6,8);
