@@ -50,39 +50,9 @@ void setup() {
 
 // Wie loop() beim Arduino wird draw() immer wieder aufgerufen, solange das Programm ausgeführt wird.
 void draw() {
-   stroke(letraSecundaria);
- fill(letraSecundaria);
- rect(0, 0, w, h/10);
- fill(black);
- line(w/32,h/40,w/32+2*w/32,h/40);
- fill(red);
- int R = w/3;
- int r = w/20;
- 
- fill(letraSecundaria);
- stroke(letraSecundaria);
- arc(w/2, h/2, 2*R+5, 2*R+r/3, 0, 2*PI, PIE);
- fill(fondo2);
- stroke(fondo2);
- arc(w/2, h/2, 2*R-5, 2*R-r/3, 0, 2*PI, PIE);
- 
- float aux=93*2; 
- for(float i=0;i<3*PI/2;i=i+(PI/360)){
-   ellipse(w/2-R*cos(-(i+PI/2)),h/2+R*sin(-(i+PI/2)),r,r);
-   aux=aux+0.4;
-   fill(223,int(aux/2),20);
-   stroke(223,int(aux/2),20); 
- }
- 
- stroke(white);
- fill(white);
- textSize(bigLetters);
- text("8",w/2-w/40,h/2);
- stroke(letraSecundaria);
- fill(letraSecundaria);
- textSize(smallLetters);
- text("REMAINING",w/2-2.2*smallLetters,h/2+2.2*smallLetters);
- home(w/6,5*h/6,6);
+    menu();
+    knobe(50,100);
+    home(w/6,5*h/6,6);
 }
 
 void onKetaiListSelection(KetaiList klist)
