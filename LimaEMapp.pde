@@ -33,18 +33,20 @@ void onActivityResult(int requestCode, int resultCode, Intent data) {
  
 // setup() wird einmal zu Beginn dea Programms ausgeführt
 void setup() {
- size(displayWidth, displayHeight);
- w=displayWidth;
- h=displayHeight;
- frameRate(60);
- orientation(PORTRAIT);
- background(fondoPrincipal);
-  //start listening for BT connections
- bt.start();
- //at app start select device…
- isConfiguring = true;
- bigLetters = (h+w)/20;
- smallLetters = (h+w)/60;
+     size(displayWidth, displayHeight);
+     w=displayWidth;
+     h=displayHeight;
+     frameRate(60);
+     orientation(PORTRAIT);
+     background(fondoPrincipal);
+      //start listening for BT connections
+     bt.start();
+     //at app start select device…
+     isConfiguring = true;
+     bigLetters = (h+w)/20;
+     smallLetters = (h+w)/60;
+     init = millis();
+     loadImages();
 }
 
 int init,i=0;
@@ -63,17 +65,17 @@ void draw() {
 
 void onKetaiListSelection(KetaiList klist)
 {
-  String selection = klist.getSelection();
-  bt.connectToDeviceByName("Analyzerlabs");
-
-  //dispose of list for now
-  klist = null;
+    String selection = klist.getSelection();
+    bt.connectToDeviceByName("Analyzerlabs");
+  
+    //dispose of list for now
+    klist = null;
 }
 
 //Call back method to manage data received
 void onBluetoothDataEvent(String who, byte[] data) {
- if(isConfiguring)
- return;
- //received
- info = new String(data);
+   if(isConfiguring)
+       return;
+   //received
+   info = new String(data);
 }
