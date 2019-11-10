@@ -46,12 +46,13 @@ void setup() {
      bigLetters = (h+w)/20;
      smallLetters = (h+w)/60;
      init = millis();
-     loadImages();
+     
 }
 
 int init,i=0;
 // Wie loop() beim Arduino wird draw() immer wieder aufgerufen, solange das Programm ausgeführt wird.
 void draw() {
+    loadImages();
     if(millis()-init>=1){
        menu();
        home(w/6,5*h/6,8);
